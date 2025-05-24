@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ulang Tahun Qila</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <!-- Musik tetap berjalan -->
+  <audio autoplay loop>
+    <source src="0524.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Konten halaman dimuat di iframe -->
+  <iframe id="page" src="index.html" width="100%" height="100%" style="border:none;"></iframe>
+
+  <script>
+    // Menghandle perpindahan halaman tanpa reload audio
+    document.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A' && e.target.href.endsWith('flower.html')) {
+        e.preventDefault();
+        document.getElementById('page').src = 'flower.html';
+      }
+    });
+  </script>
+</body>
+</html>
